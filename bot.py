@@ -39,7 +39,7 @@ async def on_message(message):
     if str(message.channel.name) == "success":
         try:
             #getting all the information needed for the post: author name, the image url and the tweet text
-            author = str(message.author.username)
+            author = str(message.author).split('#')[0]
             image_url = message.attachments[0].url
             tweet_text = ('Success by ' + author + " in @" + data["group_name"])
             filename = 'success.jpg'
@@ -63,7 +63,7 @@ async def on_message(message):
                     return user == message.author and str(reaction.emoji) == '🗑️' and reaction.message.id == msg.id
                 try:
                     #waiting for the user to react with 🗑 within the desired time or passing
-                    reaction, user = await bot.wait_for('reaction_add', timeout=data["time_to_delete"], check=check)
+                    reaction, user = await bot.wait_for('reaction_add', timeout=300, check=check)
                 except asyncio.TimeoutError:
                     #exceeded the time to delete the tweet
                     print("Will not delete this success")
