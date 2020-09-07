@@ -1,4 +1,3 @@
-
 import discord
 import requests
 import tweepy
@@ -52,13 +51,13 @@ async def on_message(message):
                 #posting the actual tweet and sending the message embed
                 post_tweet = api.update_with_media(filename, status=tweet_text)
                 embed = discord.Embed(title=f"Successfully posted your success!", description=f"Success by <@{message.author.id}> \n You can find your tweet [here](https://twitter.com/{api.me().name}/status/{str(post_tweet.id)}) \n React with 🗑️ to this message within the next 5 minutes to delete the post", color=data["embed_color"])
-                embed.set_footer(text=f"{data["group_name"]} Success Poster", icon_url=data["footer_image_url"])
+                embed.set_footer(text=f'{data["group_name"]} Success Poster', icon_url=data["footer_image_url"])
                 #sending the embed
                 msg = await message.channel.send(embed=embed)
                 #option to delete the success post
                 await msg.add_reaction("🗑️")
                 deleted = discord.Embed(title=f"Success Deleted!", description=f"<@{message.author.id}> your tweet has been successfully deleted \n If you think it was an error please open a ticket", color=data["embed_color"])
-                deleted.set_footer(text=f"{data["group_name"]} Success Poster", icon_url=data["footer_image_url"])
+                deleted.set_footer(text=f'{data["group_name"]} Success Poster', icon_url=data["footer_image_url"])
                 #needed to delete the tweet ONLY if the user that posted it wants to delete it otherwise ignore the reactions
                 def check(reaction, user):
                     return user == message.author and str(reaction.emoji) == '🗑️' and reaction.message.id == msg.id
