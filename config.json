@@ -1,8 +1,8 @@
 {
     "bot_token": "go to https://discord.com/developers/applications and get the bot token",
     "twitter_consumer_key": "go to https://developer.twitter.com/en/apps and get your credentials",
-    "twitter_secret_key": "go to https://developer.twitter.com/en/apps and get your credentialsgo to https://developer.twitter.com/en/apps and get your credentialsgo to https://developer.twitter.com/en/apps and get your credentials",
-    "twitter_access_key": "go to https://developer.twitter.com/en/apps and get your credentialsgo to https://developer.twitter.com/en/apps and get your credentials",
+    "twitter_secret_key": "go to https://developer.twitter.com/en/apps and get your credentials",
+    "twitter_access_key": "go to https://developer.twitter.com/en/apps and get your credentials",
     "twitter_access_secret": "go to https://developer.twitter.com/en/apps and get your credentials",
     "group_name": "your group's twitter @",
     "footer_image_url": "if you don't want to put a footer image, leave blank and make sure to edit bot.py and remove at line 54 and at line 60 ''icon_url=data['footer_image_url']''",
